@@ -723,3 +723,40 @@ p a {
         width: 5rem !important;
     }
 }
+/* ==========================================
+   Ajuste para Slide1 en mobile
+   ========================================== */
+@media (max-width: 768px) {
+    .slide1 {
+        min-height: 100dvh !important;
+        padding-top: 2rem !important;
+        padding-bottom: 6rem !important;
+        justify-content: center !important;
+    }
+
+    .project-text {
+        padding: 0 0 1rem 0 !important;
+        text-align: center !important;
+    }
+
+    .card {
+        gap: 1.2rem !important;
+    }
+
+    .project-card-square {
+        width: 22rem !important;
+    }
+
+        .project-card-square h3 {
+            font-size: 1.2rem !important;
+            padding: 0.6rem !important;
+        }
+
+    .slide1 .scroll-indicator {
+        bottom: 1.5rem !important;
+    }
+
+    .ballena-indicador {
+        width: 4.5rem !important;
+    }
+}
