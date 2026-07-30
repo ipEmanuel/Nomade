@@ -75,10 +75,12 @@ ul, li {
    ======================== */
 .slides {
     width: 100%;
-    min-height: 100vh;    display: flex;
+    min-height: 100vh;    
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 5rem;
+    position:relative;
 }
 
 .slide {
@@ -91,9 +93,10 @@ ul, li {
 .slide2,
 .slide3,
 .slide4 {
+    position:relative;
     scroll-snap-align: center;
     scroll-snap-stop: always;
-    background-color: var(--oscuro);
+    background-color: transparent;
 }
 
 @media (max-width: 768px) {
@@ -625,6 +628,7 @@ p a {
     color: var(--blanco);
     animation: rebote 2s ease-in-out infinite;
     cursor: pointer;
+    z-index:10;
 }
 
 .ballena-indicador {

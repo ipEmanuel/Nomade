@@ -14,11 +14,8 @@
 
         <partial name="_SocialNav" />
     </div>
-    <a href="#proyectos" class="scroll-indicator" aria-label="Ir a la sección de proyectos">
-        <img src="~/img/icon-whale.png" alt="" class="ballena-indicador">
-        @* <partial name="_BallenaIndicador" /> *@
-    </a> 
 
+    <partial name="_BallenaIndicador" model='"#proyectos"' />
 </header>
 
 <main>
@@ -43,9 +40,10 @@
                 }
             </div>
         </div>
+        <partial name="_BallenaIndicador" model='"#sobreMi"' />
     </section>
 
-    <section class="slides slide2" aria-label="sobremi-titulo">
+    <section class="slides slide2" aria-label="sobremi-titulo" id="sobreMi">
         <div class="blog contenedor">
             <h2 class="blog-titulo">Sobre mi</h2>
             <p>

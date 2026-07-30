@@ -1,0 +1,11 @@
+## Ignorar carpetas de compilación
+bin/
+obj/
+
+## Ignorar carpetas locales de Visual Studio / IDEs
+.vs/
+.idea/
+*.user
+
+## Ignorar archivos de logs
+*.log
