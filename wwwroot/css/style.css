@@ -31,9 +31,13 @@ body {
     background-color: var(--oscuro);
     letter-spacing: 0.3px;
 }
+body, html{
+    overflow-x:hidden;
+}
 
 a {
     text-decoration: none;
+    color:var(--primario)
 }
 
 h1, h3, p {
@@ -356,7 +360,7 @@ p a {
     }
 
     .project-text {
-        padding: 4rem;
+        padding: 2rem ;
         text-align: center;
     }
 
@@ -567,7 +571,6 @@ p a {
     border-radius: 0.3rem;
 }
 
-/* FIX: agregado responsive para que título y fecha no se amontonen en mobile */
 .cv-horizontal {
     display: flex;
     justify-content: space-between;
@@ -576,7 +579,6 @@ p a {
     gap: 0.5rem;
 }
 
-/* FIX: las dos columnas de habilidades ahora colapsan en mobile */
 .cv-habilidades {
     display: flex;
     justify-content: space-between;
@@ -648,6 +650,24 @@ p a {
     animation:menear 1.4s ease-in-out infinite;
 }
 
+@media (max-width: 768px) {
+   
+    .slide1 {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 12rem;
+    }
+
+    .scroll-indicator {
+        bottom: 4rem;
+    }
+
+    .ballena-indicador {
+        width: 5rem;
+    }
+}
+
+
 @keyframes menear {
     0%, 100% {
         transform: rotate(3deg);
@@ -655,5 +675,36 @@ p a {
 
     50% {
         transform: rotate(-6deg);
+    }
+}
+/* ==========================================
+   Ajustes Responsive: Tarjetas y Ballena
+   ========================================== */
+@media (max-width: 768px) {
+
+    .card {
+        gap: 2rem !important;
+    }
+
+    .project-text {
+        padding: 1rem 1rem 2rem !important;
+    }
+
+    .project-card-square {
+        width: 26rem !important;
+    }
+
+    .slide1 {
+        height: auto !important;
+        min-height: 100vh;
+        padding-bottom: 9rem !important;
+    }
+
+    .scroll-indicator {
+        bottom: 2.5rem !important;
+    }
+
+    .ballena-indicador {
+        width: 5rem !important;
     }
 }
