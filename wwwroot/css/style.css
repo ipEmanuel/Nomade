@@ -79,7 +79,8 @@ ul, li {
    ======================== */
 .slides {
     width: 100%;
-    min-height: 100vh;    
+    min-height: 100vh;
+    min-height:100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,6 +91,7 @@ ul, li {
 .hero,
 .slide1 {
     min-height: 100vh;
+    min-height:100dvh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
 }
@@ -238,6 +240,19 @@ button {
         text-align: center;
         margin: 3px 0;
     }
+}
+
+@media (max-width: 768px) {
+    .hero {        
+        padding-top: calc(2rem + env(safe-area-inset-top));
+        padding-bottom: 5rem; 
+        justify-content: center;
+    }
+
+        /* Se sube un poco la ballena del primer slide para que no la tape la barra del navegador */
+        .hero .scroll-indicator {
+            bottom: 2rem !important;
+        }
 }
 
 /* ========================
