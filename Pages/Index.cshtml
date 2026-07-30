@@ -1,0 +1,63 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Emanuel";
+    ViewData["BodyClass"] = "slides-pages";
+    ViewData["HtmlClass"] = "snap";
+}
+
+<header class="hero slides slide" role="banner">
+    <div id="particles-js"></div>
+    <div class="hero-texto contenedor">
+        <h1>Hola, soy <span class="highlight">Emanuel</span></h1>
+        <p>Desarrollador .Net | Buscando posisción junior</p>
+
+        <partial name="_SocialNav" />
+    </div>
+    <a href="#proyectos" class="scroll-indicator" aria-label="Ir a la sección de proyectos">
+        <img src="~/img/icon-whale.png" alt="" class="ballena-indicador">
+        @* <partial name="_BallenaIndicador" /> *@
+    </a> 
+
+</header>
+
+<main>
+    <section class="slides slide1" id="proyectos" aria-label="proyectos-titulo">
+        <div class="contenedor project">
+            <h2 class="project-text">Proyectos</h2>
+
+            <div class="card">
+                @foreach (var proyecto in Model.Proyectos)
+                {
+                    <button class="project-card-square" onclick="abrirModal('modal-@proyecto.Id')">
+                        <img src="~/@proyecto.Imagen" alt="@proyecto.ImagenAlt">
+                        <h3>@proyecto.Titulo</h3>
+                    </button>
+                    <dialog id="modal-@proyecto.Id" class="project-modal">
+                        <button class="modal-cerrar" onclick="this.closest('dialog').close()" aria-label="Cerrar">✕</button>
+                        <img src="~/@proyecto.Imagen" alt="@proyecto.ImagenAlt">
+                        <h3>@proyecto.Titulo</h3>
+                        <p>@proyecto.Descripcion</p>
+                        <a href="@proyecto.GithubUrl" target="_blank">Ver en GitHub</a>
+                    </dialog>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="slides slide2" aria-label="sobremi-titulo">
+        <div class="blog contenedor">
+            <h2 class="blog-titulo">Sobre mi</h2>
+            <p>
+                ¡Hola! Soy un estudiante de la Tecnicatura Universitaria en Programación en la UTN, apasionado por el mundo del
+                desarrollo. Aunque me encanta el front-end por la creatividad y diseño que involucra, también disfruto trabajar en el
+                back-end, donde puedo estructurar y optimizar aplicaciones desde el núcleo.
+            </p>
+            <p>
+                Tengo varios proyectos publicados en mi GitHub que reflejan mi crecimiento y mis ganas de aprender. Además de la
+                programación, me dedico al arte del tatuaje, donde puedo combinar mi lado creativo con la precisión y detalle que
+                requiere esta profesión.
+            </p>
+        </div>
+    </section>
+</main>
